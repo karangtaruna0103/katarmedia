@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kerja Sama - Karang Taruna</title>
+  <link rel="icon" href="assets/images/katar.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+    }
+    
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    .partnership-header {
+      background-color: #1455a4;
+      color: white;
+      padding: 40px 0;
+      margin-bottom: 30px;
+    }
+    
+    .partnership-card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    
+    .partnership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .partnership-img {
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .partnership-card:hover .partnership-img {
+      transform: scale(1.05);
+    }
+    
+    .partner-logo {
+      max-height: 80px;
+      max-width: 150px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+    
+    .partner-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    
+    .benefit-icon {
+      background-color: rgba(20, 85, 164, 0.1);
+      color: #1455a4;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .process-step {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 25px;
+    }
+    
+    .process-step:last-child {
+      margin-bottom: 0;
+    }
+    
+    .process-step::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #1455a4;
+      border: 3px solid white;
+    }
+    
+    .process-step::after {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 25px;
+      width: 2px;
+      height: calc(100% - 20px);
+      background-color: #1455a4;
+    }
+    
+    .process-step:last-child::after {
+      display: none;
+    }
+    
+    .testimonial-card {
+      background-color: #f8f9fa;
+      border-left: 4px solid #1455a4;
+    }
+    
+    footer a {
+      text-decoration: underline;
+    }
+    
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="../index.php">
+      <img src="assets/images/katar.png" alt="Logo Karang Taruna" />
+      <strong>KARANG TARUNA</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.php">HOME</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">PROFIL</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="struktur.html">Struktur Organisasi</a></li>
+            <li><a class="dropdown-item" href="visimisi.html">Visi dan Misi</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">KEGIATAN</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="programunggulan.html">Program Unggulan</a></li>
+            <li><a class="dropdown-item active" href="kerjasama.html">Kerja Sama</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="login.php">LOGIN</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="partnership-header text-center">
+  <div class="container">
+    <h1><i class="bi bi-handshake"></i> Kerja Sama</h1>
+    <p class="lead">Kolaborasi untuk pengembangan pemuda dan masyarakat yang lebih baik</p>
+  </div>
+</div>
+
+<!-- Partnership Opportunities -->
+<div class="container mb-5">
+  <div class="row mb-5">
+    <div class="col-lg-6">
+      <h2 class="mb-4"><i class="bi bi-briefcase text-primary me-2"></i>Peluang Kerja Sama</h2>
+      <p class="lead">
+        Karang Taruna membuka kesempatan kerja sama dengan berbagai pihak untuk bersama-sama memberdayakan pemuda dan masyarakat.
+      </p>
+      <p>
+        Kami menyambut baik kerja sama dengan perusahaan, organisasi masyarakat, instansi pemerintah, maupun individu dalam berbagai bentuk kolaborasi.
+      </p>
+    </div>
+    <div class="col-lg-6">
+      <div class="card partnership-card h-100">
+        <div class="card-body">
+          <h4 class="card-title">Mengapa Bermitra dengan Kami?</h4>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-1">Jaringan Luas</h5>
+              <p class="mb-0">Akses ke basis pemuda dan masyarakat di seluruh desa/kelurahan</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-1">Kredibilitas</h5>
+              <p class="mb-0">Organisasi resmi yang diakui pemerintah dengan struktur yang solid</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-lightbulb-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-1">Inovasi</h5>
+              <p class="mb-0">Program-program kreatif berbasis kebutuhan masyarakat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Partnership Types -->
+  <h3 class="text-center mb-4"><i class="bi bi-diagram-3 text-primary me-2"></i>Bentuk Kerja Sama</h3>
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card partnership-card h-100">
+        <div class="card-body text-center">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+            <i class="bi bi-cash-coin fs-3 text-primary"></i>
+          </div>
+          <h4>Sponsorship</h4>
+          <p class="card-text">
+            Dukungan dana untuk program/kegiatan dengan imbal balik eksposur merek dan CSR
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card partnership-card h-100">
+        <div class="card-body text-center">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+            <i class="bi bi-box-seam fs-3 text-primary"></i>
+          </div>
+          <h4>Donasi Produk</h4>
+          <p class="card-text">
+            Penyediaan produk untuk mendukung kegiatan atau program pemberdayaan
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card partnership-card h-100">
+        <div class="card-body text-center">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+            <i class="bi bi-person-workspace fs-3 text-primary"></i>
+          </div>
+          <h4>Pelatihan/Kapasitasi</h4>
+          <p class="card-text">
+            Berbagi keahlian melalui program pelatihan untuk pengembangan kapasitas pemuda
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card partnership-card h-100">
+        <div class="card-body text-center">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+            <i class="bi bi-building fs-3 text-primary"></i>
+          </div>
+          <h4>Program Khusus</h4>
+          <p class="card-text">
+            Pengembangan program khusus sesuai keahlian dan kebutuhan mitra
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card partnership-card h-100">
+        <div class="card-body text-center">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+            <i class="bi bi-megaphone fs-3 text-primary"></i>
+          </div>
+          <h4>Kampanye Bersama</h4>
+          <p class="card-text">
+            Kolaborasi dalam kampanye sosial untuk isu-isu tertentu
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card partnership-card h-100">
+        <div class="card-body text-center">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+            <i class="bi bi-globe fs-3 text-primary"></i>
+          </div>
+          <h4>Riset/Pengembangan</h4>
+          <p class="card-text">
+            Kerja sama riset atau pengembangan program inovatif
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Partnership Process -->
+  <div class="row mb-5">
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="mb-4"><i class="bi bi-list-check text-primary me-2"></i>Proses Kerja Sama</h3>
+          
+          <div class="process-step">
+            <h5>1. Pengajuan Proposal</h5>
+            <p>Mitra mengajukan proposal kerja sama atau menanggapi undangan kerja sama dari kami</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>2. Diskusi Kebutuhan</h5>
+            <p>Pertemuan untuk mendiskusikan kebutuhan, harapan, dan bentuk kolaborasi</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>3. Penyusunan MoU</h5>
+            <p>Penyusunan perjanjian kerja sama yang mencakup hak dan kewajiban kedua belah pihak</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>4. Implementasi Program</h5>
+            <p>Pelaksanaan program/kegiatan sesuai kesepakatan bersama</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>5. Evaluasi & Laporan</h5>
+            <p>Evaluasi hasil dan penyusunan laporan untuk pengembangan kerja sama berikutnya</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="mb-4"><i class="bi bi-file-earmark-text text-primary me-2"></i>Dokumen Kerja Sama</h3>
+          <p>Untuk memulai kerja sama, silakan Kirim ke alamat email kami :</p>
+          
+          <div class="alert alert-info">
+            <i class="bi bi-info-circle-fill me-2"></i>
+            Dokumen yang sudah dilengkapi dapat dikirim via email ke <strong>katarmedia0103@gmail.com</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Our Partners -->
+  <h3 class="text-center mb-4"><i class="bi bi-people-fill text-primary me-2"></i>Mitra Kami</h3>
+  <div class="row g-4 mb-5 justify-content-center">
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/Kompas.png" class="img-fluid partner-logo" alt="Kompas">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/CBBFM_Jakarta_Logo.png" class="img-fluid partner-logo" alt="Radio CBB">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/content_file-logo-jayaraya-20230329030130.png" class="img-fluid partner-logo" alt="Pemprov DKI Jakarta">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/logolpkfujisan.png" class="img-fluid partner-logo" alt="LPK Fujisan">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/Seal_of_West_Jakarta.jpg" class="img-fluid partner-logo" alt="Balaikota">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/Indomie_Logo.png" class="img-fluid partner-logo" alt="Indomie">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/Logo-TeaJus.png" class="img-fluid partner-logo" alt="Tea Jus">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/Alfamidi.png" class="img-fluid partner-logo" alt="Alfamidi">
+    </div>
+    <div class="col-6 col-md-3 text-center">
+      <img src="assets/images/Logo_Indomaret.png" class="img-fluid partner-logo" alt="Indomaret">
+    </div>
+  </div>
+  
+  <!-- Testimonials -->
+  <h3 class="text-center mb-4"><i class="bi bi-chat-square-quote text-primary me-2"></i>Testimoni Mitra</h3>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card testimonial-card h-100">
+        <div class="card-body">
+          <div class="d-flex mb-3">
+            <div>
+              <h6 class="mb-0">Budi Santoso</h6>
+              <small class="text-muted">PT Sejahtera Abadi</small>
+            </div>
+          </div>
+          <p class="card-text">
+            "Kerja sama dengan Karang Taruna sangat efektif. Program CSR kami terlaksana dengan baik dan tepat sasaran berkat jaringan mereka di masyarakat."
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+      <div class="card testimonial-card h-100">
+        <div class="card-body">
+          <div class="d-flex mb-3">
+            <div>
+              <h6 class="mb-0">Dewi Lestari</h6>
+              <small class="text-muted">Dinas Pemuda dan Olahraga</small>
+            </div>
+          </div>
+          <p class="card-text">
+            "Karang Taruna adalah mitra strategis kami dalam program pemberdayaan pemuda. Mereka memiliki sumber daya manusia yang energik dan kreatif."
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+      <div class="card testimonial-card h-100">
+        <div class="card-body">
+          <div class="d-flex mb-3">
+            <div>
+              <h6 class="mb-0">Agus Setiawan</h6>
+              <small class="text-muted">Universitas Negeri</small>
+            </div>
+          </div>
+          <p class="card-text">
+            "Kolaborasi riset dengan Karang Taruna memberikan kami akses ke data riil di masyarakat. Mereka sangat profesional dalam kerja sama ini."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action -->
+<div class="bg-primary text-white py-5">
+  <div class="container text-center">
+    <h3 class="mb-3">Tertarik Bermitra dengan Kami?</h3>
+    <p class="lead mb-4">Kami siap berdiskusi untuk menciptakan kolaborasi yang saling menguntungkan</p>
+    <a href="https://wa.me/6285710675351" class="btn btn-light btn-lg px-4 me-2">Hubungi Kami</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-primary text-white text-center py-4">
+  <p class="mb-1">&copy; 2025 Karang Taruna</p>
+  <p>
+    Ikuti kami di:
+    <a href="#" class="text-white fw-bold">Facebook</a> |
+    <a href="https://www.instagram.com/karangtaruna01.03" class="text-white fw-bold">Instagram</a> |
+    <a href="#" class="text-white fw-bold">YouTube</a>
+  </p>
+</footer>
+
+<!-- Floating Button -->
+<a href="contact.html" class="floating-btn btn btn-danger">
+  <i class="bi bi-envelope-fill fs-5"></i>
+</a>
+
+<!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
